@@ -19,6 +19,14 @@
 
 <link href="<?= $main_url ?>asset/dist/css/bootstrap.min.css" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+<!-- tokenfield -->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.css">
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
