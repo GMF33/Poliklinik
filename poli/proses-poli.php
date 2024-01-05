@@ -9,7 +9,7 @@ if(!isset($_SESSION['ssLoginRM'])){
 
 require "..//config.php";
 
-// tambah obat baru
+// tambah poli baru
 if(isset($_POST['simpan'])){
     $nama_poli    = trim(htmlspecialchars($_POST['nama_poli']));
     $keterangan      = trim(htmlspecialchars($_POST['keterangan']));
@@ -21,6 +21,28 @@ if(isset($_POST['simpan'])){
 
 }
 
+// hapus poli
+if(@$_GET['aksi'] == 'hapus-poli'){
+    $id = $_GET['id'];
+
+    mysqli_query($koneksi, "DELETE FROM poli WHERE id = $id");
+
+    header('location: index.php?msg=deleted');
+    return;
+}
+
+// update poli
+if(isset($_POST['update'])){
+    $id                 = trim(htmlspecialchars($_POST['id']));
+    $nama_poli          = trim(htmlspecialchars($_POST['nama_poli']));
+    $keterangan         = trim(htmlspecialchars($_POST['keterangan']));
+
+    mysqli_query($koneksi, "UPDATE poli SET nama_poli = '$nama_poli', keterangan = '$keterangan', WHERE id = $id");
+    
+    header('location: index.php?msg=updated');
+        return;
+
+}
 
 
 ?>
